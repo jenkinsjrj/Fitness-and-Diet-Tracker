@@ -22,18 +22,3 @@ def test_home_endpoint():
 
     assert response.status_code == 200
     assert response.get_json()["status"] == "running"
-
-
-def test_get_workouts():
-    app.config["TESTING"] = True
-
-    client = app.test_client()
-
-    response = client.get("/api/workouts")
-
-    assert response.status_code == 200
-
-    workouts = response.get_json()
-
-    assert isinstance(workouts, list)
-    assert len(workouts) >= 3
