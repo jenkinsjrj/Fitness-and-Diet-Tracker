@@ -1,19 +1,18 @@
+
 import os
+from pathlib import Path
 
 import mysql.connector
 from dotenv import load_dotenv
 
-# Load environment variables from .env
-load_dotenv()
+# Locate .env relative to the repository root
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(PROJECT_ROOT / ".env")
 
 
 def get_db_connection():
-    """
-    Create and return a connection
-    to the MySQL database.
-    """
-
-    connection = mysql.connector.connect(
+    """Create a new MySQL connection."""
+    return mysql.connector.connect(
         host=os.getenv("DB_HOST", "127.0.0.1"),
         port=int(os.getenv("DB_PORT", "3307")),
         database=os.getenv("DB_NAME", "fitness_tracker"),
@@ -21,25 +20,26 @@ def get_db_connection():
         password=os.getenv("MYSQL_PASSWORD")
     )
 
-    return connection
 
-
-def test_connection():
+def execute_select(query, params=()):
     """
-    Test whether Python can connect to MySQL.
-    """
+    Execute a parameterized SELECT query.
 
+    Returns a list of dictionaries.
+    """
     connection = None
+    cursor = None
 
     try:
         connection = get_db_connection()
+        cursor = connection.cursor(dictionary=True)
 
-        if connection.is_connected():
-            print("Successfully connected to MySQL!")
-
-    except mysql.connector.Error as error:
-        print(f"Database connection failed: {error}")
+        cursor.execute(query, params)
+        return cursor.fetchall()
 
     finally:
-        if connection is not None and connection.is_connected():
+        if cursor is not None:
+            cursor.close()
+
+        if connection is not None:
             connection.close()
