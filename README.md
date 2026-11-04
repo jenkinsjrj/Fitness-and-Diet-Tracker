@@ -9,7 +9,9 @@ This is being developed on Windows
 I recommend using VSCode, as it has visual Github Source Control
 You must have Docker Desktop installed: https://www.docker.com/products/docker-desktop/?at_exp=DO112.B
 
-Once the Repo is added to VSCode, you must create the python virtual environment and the Docker Container.
+Once the Repo is added to VSCode, change the .env passwords to something unique.
+
+Next, you must create the python virtual environment and the MySQL Docker Container.
 
 #### 1. Python Virtual Environment
 Make sure you have execution rights before you try to run these. 
@@ -42,6 +44,34 @@ Run this command to create the Docker Container and run it(This may take a coupl
 ```
 docker compose up -d
 ```
+
+Other Important commands for Database Management
+
+| Command |	Effect |
+| -------- | -------- |
+| docker compose up -d | Start MySQL |
+| docker compose stop |	Stop MySQL |
+| docker compose down	| Remove the container and network, preserve the database volume |
+| docker compose logs db |	View MySQL logs |
+| docker compose down -v	| Remove containers and delete the database volume |
+
+To access SQL from the terminal, run this command and input the password you set in .env
+```
+docker exec -it fitness_mysql mysql -u fitness_user -p fitness_tracker
+```
+
+## Running the App
+
+To run the application, execute this command from the root directory
+```
+python -m backend.app
+```
+
+The docker container must be running for the application to work
+
+
+
+
 
 
 
