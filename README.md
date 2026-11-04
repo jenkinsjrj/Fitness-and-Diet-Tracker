@@ -6,7 +6,9 @@ Description
 ## Installation for Development
 
 This is being developed on Windows
+
 I recommend using VSCode, as it has visual Github Source Control
+
 You must have Docker Desktop installed: https://www.docker.com/products/docker-desktop/?at_exp=DO112.B
 
 Once the Repo is added to VSCode, change the .env passwords to something unique.
