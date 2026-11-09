@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 from backend.routes.nutrition_routes import nutrition_bp
 from backend.routes.progress_routes import progress_bp
 from backend.routes.workout_routes import workout_bp
+from backend.routes.reminder_routes import reminder_bp
 
 
 def create_app(test_config=None):
@@ -19,6 +20,9 @@ def create_app(test_config=None):
 
     # Trent's features: nutrition tracking and food recommendations.
     app.register_blueprint(nutrition_bp)
+
+    # John's features: reminders
+    app.register_blueprint(reminder_bp)
 
     @app.get("/")
     def home():

@@ -3,8 +3,7 @@
  * Describes the SQL database's 8 tables consisting of:
  * - users
  * - workouts
- * - goals
- * - history
+ * - weight_history
  * - foods
  * - meals
  * - meal_items
@@ -187,4 +186,5 @@ CREATE TABLE IF NOT EXISTS reminders (
 
     FOREIGN KEY (user_id)
         REFERENCES users(id)
+        ON DELETE CASCADE
 );
