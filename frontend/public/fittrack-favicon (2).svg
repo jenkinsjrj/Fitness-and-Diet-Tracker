@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FitTrack dumbbell and carrot logo">
+  <rect width="64" height="64" rx="14" fill="#08263b"/>
+  <g fill="#fff">
+    <rect x="12" y="26" width="4" height="12" rx="2"/>
+    <rect x="17" y="22" width="6" height="20" rx="2"/>
+    <rect x="24" y="28" width="16" height="8" rx="1"/>
+    <rect x="41" y="22" width="6" height="20" rx="2"/>
+    <rect x="48" y="26" width="4" height="12" rx="2"/>
+  </g>
+  <g transform="rotate(38 43 44)">
+    <path d="M39 36 Q43 31 47 36 L46 51 Q43 59 40 51 Z" fill="#ff9025" stroke="#08263b" stroke-width="1.5"/>
+    <path d="M43 36 Q35 30 37 24 Q43 26 44 34 Q44 26 51 24 Q52 31 45 36" fill="#6cde4e" stroke="#08263b" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M40 42h4M42 47h4" stroke="#c9630d" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+</svg>
