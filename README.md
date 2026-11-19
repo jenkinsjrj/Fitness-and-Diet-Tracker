@@ -88,6 +88,7 @@ Run the frontend using this command
 ```
 npm run dev
 ```
+
 You should be able to access the frontend UI at http://localhost:5173
 
 
