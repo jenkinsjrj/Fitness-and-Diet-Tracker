@@ -1,0 +1,358 @@
+
+.calendar-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  margin-bottom: 28px;
+}
+
+.calendar-header h1 {
+  font-size: 30px;
+  margin: 0 0 10px;
+  color: #172b3a;
+}
+
+.calendar-header p {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Summary cards */
+
+.reminder-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.reminder-stat-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reminder-stat-card span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.reminder-stat-card strong {
+  font-size: 30px;
+  color: #172b3a;
+}
+
+/* Form */
+
+.reminder-form-card h2,
+.reminder-list-card h2 {
+  font-size: 20px;
+  margin: 0 0 20px;
+  color: #172b3a;
+}
+
+.reminder-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.reminder-form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.reminder-form-group input,
+.reminder-form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+  background: white;
+  color: #1f2937;
+}
+
+.reminder-form-group textarea {
+  resize: vertical;
+}
+
+.reminder-form-group input:focus,
+.reminder-form-group textarea:focus {
+  outline: 2px solid #16a34a;
+  outline-offset: 1px;
+  border-color: #16a34a;
+}
+
+.reminder-form-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.reminder-primary-button {
+  background: #16834b;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+}
+
+.reminder-primary-button:hover {
+  background: #166534;
+}
+
+.reminder-secondary-button {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.reminder-secondary-button:hover {
+  background: #e5e7eb;
+}
+
+.reminder-primary-button:disabled,
+.reminder-secondary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Messages */
+
+.reminder-error,
+.reminder-success {
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.reminder-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.reminder-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+/* Reminder list */
+
+.reminder-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.reminder-list-header h2 {
+  margin: 0;
+}
+
+.reminder-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.reminder-filters button {
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #374151;
+  padding: 9px 14px;
+  font-size: 14px;
+}
+
+.reminder-filters button:hover {
+  background: #e5e7eb;
+}
+
+.reminder-filters button.selected {
+  background: #285042;
+  color: white;
+  border-color: #285042;
+}
+
+.reminder-empty {
+  text-align: center;
+  padding: 40px 16px;
+  color: #6b7280;
+}
+
+.reminder-empty p {
+  font-size: 17px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.reminder-empty span {
+  font-size: 14px;
+}
+
+.reminder-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.reminder-item:last-child {
+  border-bottom: none;
+}
+
+.reminder-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.reminder-item-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.reminder-item-heading h3 {
+  font-size: 17px;
+  margin: 0;
+  color: #172b3a;
+  overflow-wrap: anywhere;
+}
+
+.reminder-description {
+  margin: 0 0 12px;
+  color: #4b5563;
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.reminder-date {
+  color: #6b7280;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Status labels */
+
+.reminder-status {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.status-upcoming {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.status-past {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.status-completed {
+  color: #374151;
+  background: #e5e7eb;
+}
+
+.reminder-item.completed h3 {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+/* Action buttons */
+
+.reminder-item-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.reminder-item-actions button {
+  padding: 8px 12px;
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+
+.reminder-complete-button {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.reminder-complete-button:hover {
+  background: #bbf7d0;
+}
+
+.reminder-edit-button {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.reminder-edit-button:hover {
+  background: #bae6fd;
+}
+
+.reminder-delete-button {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.reminder-delete-button:hover {
+  background: #fecaca;
+}
+
+.reminder-item-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reminder-note {
+  color: #6b7280;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 800px) {
+  .reminder-item {
+    flex-direction: column;
+  }
+
+  .reminder-item-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .reminder-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .calendar-header h1 {
+    font-size: 26px;
+  }
+
+  .reminder-item-actions button {
+    flex: 1;
+  }
+}
