@@ -41,7 +41,12 @@ export const api = {
   addWeight: (data) =>
     request("/api/weights", jsonOptions("POST", data)),
 
-  getProgress: () => request("/api/progress"),
+  getProgress: (weekStart) =>
+    request(
+      weekStart
+        ? `/api/progress?week_start=${encodeURIComponent(weekStart)}`
+        : "/api/progress"
+    ),
 
   // Nutrition
   getFoods: () => request("/api/foods"),
